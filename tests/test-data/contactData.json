@@ -1,0 +1,8 @@
+{
+  "valid": {
+    "name": "Automation Contact",
+    "email": "automation.contact@example.com",
+    "subject": "Automation test inquiry",
+    "message": "This message is submitted by the UI automation suite."
+  }
+}

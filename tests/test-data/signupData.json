@@ -1,0 +1,16 @@
+{
+  "validUser": {
+    "name": "Automation Test User",
+    "password": "TestPassword123!",
+    "title": "Mr",
+    "firstName": "Automation",
+    "lastName": "Test User",
+    "address": "1 Test Street",
+    "country": "India",
+    "state": "Test State",
+    "city": "Test City",
+    "zipcode": "12345",
+    "mobileNumber": "9876543210"
+  },
+  "invalidEmail": "invalid-email"
+}

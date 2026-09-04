@@ -1,15 +1,27 @@
 {
   "name": "automationexercise_playwright_ai",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
+  "description": "Playwright TypeScript automation framework for AutomationExercise",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report:open": "playwright show-report playwright-report",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.2.0"
+    "@types/node": "^26.2.0",
+    "allure-commandline": "^2.43.0",
+    "allure-playwright": "^3.4.2",
+    "dotenv": "^17.2.2",
+    "typescript": "^7.0.2"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "products": [
+    { "name": "Blue Top", "id": 1, "price": "Rs. 500" },
+    { "name": "Men Tshirt", "id": 2, "price": "Rs. 400" },
+    { "name": "Sleeveless Dress", "id": 3, "price": "Rs. 1000" }
+  ],
+  "category": "Women",
+  "brand": "Polo",
+  "nonexistentSearch": "No Such Automation Product"
+}

@@ -6,3 +6,14 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Reports and generated artifacts
+/allure-results/
+/allure-report/
+/reports/
+*.log
