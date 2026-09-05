@@ -11,6 +11,19 @@ import { ProductsPage } from '../pages/products.page';
 import { SignupPage } from '../pages/signup.page';
 import { PaymentPage } from '../pages/payment.page';
 
+const advertisingHosts = [
+  'adsrvr.org',
+  'doubleclick.net',
+  'googleads.g.doubleclick.net',
+  'googlesyndication.com',
+  'pagead2.googlesyndication.com',
+];
+
+function isAdvertisingRequest(url: string): boolean {
+  const hostname = new URL(url).hostname;
+  return advertisingHosts.some(host => hostname === host || hostname.endsWith(`.${host}`));
+}
+
 interface FrameworkFixtures {
   cartPage: CartPage;
   checkoutPage: CheckoutPage;
@@ -26,6 +39,17 @@ interface FrameworkFixtures {
 }
 
 export const test = base.extend<FrameworkFixtures>({
+  page: async ({ page }, use) => {
+    await page.route('**/*', async route => {
+      if (isAdvertisingRequest(route.request().url())) {
+        await route.abort();
+        return;
+      }
+
+      await route.continue();
+    });
+    await use(page);
+  },
   cartPage: async ({ page }, use) => {
     await use(new CartPage(page));
   },
